@@ -7,10 +7,23 @@ $ ( function(){
     function(){
 
       var imgSlider = $(".images img.active");
-      imgSlider.removeClass("active");
 
-      imgSlider.next().addClass("active");
+      var firstImg = $(".images img.first");
+
+      imgSlider.removeClass("active");
       
+      if(imgSlider.hasClass("last") == false){
+
+
+        imgSlider.next().addClass("active");
+
+      } else{
+
+        firstImg.addClass("active");
+
+      }
+
+
 
     }
   );
