@@ -3,7 +3,7 @@
 $ ( function(){
 
 
-  // invoco funzione
+  // invoco funzione con click icona destra
 
   $(".next").click(function(){
 
@@ -12,6 +12,7 @@ $ ( function(){
   });
 
 
+  // invoco funzione con click icona sinistra
 
 
   $(".prev").click(function(){
@@ -20,6 +21,7 @@ $ ( function(){
 
   });
 
+  // invoco funzione con tasto destro e sinistro
 
   $(document).keydown(function(e){
 
@@ -119,30 +121,42 @@ $ ( function(){
   //   }
   // );
 
+
   // al click del bullet appare img corrispondente
 
   $(".nav i").click(function(){
 
+    // ad ogni click rimuovo classe active a immagini e bullets
     $(".nav i").removeClass("active");
 
     $(".images img.active").removeClass("active");
 
+
+    // se non c'è classe active
+
     if ($(this).hasClass("active") == false){
 
+      // aggiungo classe active al bullet corrispondente
 
       $(this).addClass("active");
 
+      // se presente classe first  aggiungo classe active all'immagine con classe first
       if( $(this).hasClass("first")){
 
         $(".images img.first").addClass("active");
 
       } else if ($(this).hasClass("last")){
 
+        // se c'è classe last la aggiungo ad immagine con classe last
+
         $(".images img.last").addClass("active");
 
       } else if ($(this).prev().hasClass("first")){
 
+        // se presente classe first all'elemento precendente
+
         $(".images img.first").next().addClass("active");
+
       } else{
 
         $(".images img.last").prev().addClass("active");
