@@ -1,8 +1,8 @@
 // funzione
 
-function slider (direction, nextPrev) {
+function slider (direction) {
 
-  $(nextPrev).click( function(){
+
     if (direction == "right" ){
 
       var imgSlider = $(".images img.active");
@@ -37,6 +37,10 @@ function slider (direction, nextPrev) {
         firstBullet.addClass("active");
 
       }
+
+
+
+
 
     } else if ( direction == "left"){
 
@@ -76,18 +80,22 @@ function slider (direction, nextPrev) {
 
     }
 
-  });
+
 }
 // funzione
 
+$(".next").click(function(){
 
 
-slider("right", ".next");
+  slider("right");
+
+});
 
 
 
+$(".prev").click(function(){
 
 
+slider("left");
 
-
-slider("left", ".prev");
+});
