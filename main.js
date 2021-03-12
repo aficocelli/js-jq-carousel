@@ -11,7 +11,7 @@ $ ( function(){
       var firstImg = $(".images img.first");
 
       imgSlider.removeClass("active");
-      
+
       if(imgSlider.hasClass("last") == false){
 
 
@@ -23,15 +23,28 @@ $ ( function(){
 
       }
 
-
-
     }
   );
 
   $(".prev").click(
     function(){
 
-      alert("ciao");
+      var imgSlider = $(".images img.active");
+
+      var lastImg = $(".images img.last");
+
+      imgSlider.removeClass("active");
+
+      if(imgSlider.hasClass("first") == false){
+
+
+        imgSlider.prev().addClass("active");
+
+      } else{
+
+        lastImg.addClass("active");
+
+      }
 
     }
   );
